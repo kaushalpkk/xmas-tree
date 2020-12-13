@@ -1,0 +1,14 @@
+#!/bin/sh
+[Unit]
+Description=Service file for the xmas-tree
+DefaultDependencies=false
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/xmas-tree/
+ExecStart=/usr/bin/python3 /home/pi/xmas-tree/main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
